@@ -10,6 +10,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var homepage_component_1 = require("./homepage/homepage.component");
+var documents_component_1 = require("./documents/documents.component");
 var app_routing_model_1 = require("./app-routing.model");
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -22,7 +23,8 @@ var AppModule = /** @class */ (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                homepage_component_1.HomepageComponent
+                homepage_component_1.HomepageComponent,
+                documents_component_1.DocumentsComponent
             ],
             bootstrap: [
                 app_component_1.AppComponent
