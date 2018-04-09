@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { ProposalListComponent } from './proposal/proposal-list.component';
+import { ProposalNewComponent } from './proposal/proposal-new.component';
 
 import { AppRoutingModule } from './app-routing.model';
 
@@ -17,7 +18,8 @@ import { AppRoutingModule } from './app-routing.model';
     AppComponent,
     HomepageComponent,
     DocumentsComponent,
-    ProposalListComponent
+    ProposalListComponent,
+    ProposalNewComponent
   ],
   bootstrap: [
     AppComponent
