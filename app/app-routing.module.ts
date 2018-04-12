@@ -8,16 +8,16 @@ import { ProposalNewComponent } from './proposal/proposal-new.component';
 import { ProposalShowComponent } from './proposal/proposal-show.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomepageComponent },
-  { path: 'documents', component: DocumentsComponent },
-  { path: 'proposals', component: ProposalListComponent },
-  { path: 'proposals/new', component: ProposalNewComponent },
-  { path: 'proposal/:id', component: ProposalShowComponent },
+	{ path: '', redirectTo: '/home', pathMatch: 'full' },
+	{ path: 'home', component: HomepageComponent },
+	{ path: 'documents', component: DocumentsComponent },
+	{ path: 'proposals', component: ProposalListComponent },
+	{ path: 'proposals/new', component: ProposalNewComponent },
+	{ path: 'proposal/:id', component: ProposalShowComponent },
 ]
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+	imports: [ RouterModule.forRoot(routes) ],
+	exports: [ RouterModule ]
 })
 export class AppRoutingModule {}
