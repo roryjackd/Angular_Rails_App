@@ -1,0 +1,111 @@
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7343716292759612955)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProposals (20180416211503)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "proposals" ("id" bigserial primary key, "customer" character varying, "portfolio_url" character varying, "tools" character varying, "estimated_hours" decimal, "hourly_rate" decimal, "weeks_to_complete" integer, "client_email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (3.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180416211503"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-16 21:16:26.433154"], ["updated_at", "2018-04-16 21:16:26.433154"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7343716292759612955)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (1.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (7.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "proposals" CASCADE[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "proposals" ("id" bigserial primary key, "customer" character varying, "portfolio_url" character varying, "tools" character varying, "estimated_hours" decimal, "hourly_rate" decimal, "weeks_to_complete" integer, "client_email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "proposals" CASCADE[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "proposals" ("id" bigserial primary key, "customer" character varying, "portfolio_url" character varying, "tools" character varying, "estimated_hours" decimal, "hourly_rate" decimal, "weeks_to_complete" integer, "client_email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180416211503)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-16 21:29:40.996989"], ["updated_at", "2018-04-16 21:29:40.996989"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-04-16 21:29:41.001158"], ["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "proposals" ("customer", "portfolio_url", "tools", "estimated_hours", "hourly_rate", "weeks_to_complete", "client_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["customer", "Customer 0"], ["portfolio_url", "http://portfolio.google.com"], ["tools", "Ruby on Rails, Angular 2, and Postgres"], ["estimated_hours", "80.0"], ["hourly_rate", "120.0"], ["weeks_to_complete", 12], ["client_email", "roryjackd@yahoo.com"], ["created_at", "2018-04-16 21:29:41.051605"], ["updated_at", "2018-04-16 21:29:41.051605"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "proposals" ("customer", "portfolio_url", "tools", "estimated_hours", "hourly_rate", "weeks_to_complete", "client_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["customer", "Customer 1"], ["portfolio_url", "http://portfolio.google.com"], ["tools", "Ruby on Rails, Angular 2, and Postgres"], ["estimated_hours", "81.0"], ["hourly_rate", "120.0"], ["weeks_to_complete", 12], ["client_email", "roryjackd@yahoo.com"], ["created_at", "2018-04-16 21:29:41.057377"], ["updated_at", "2018-04-16 21:29:41.057377"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "proposals" ("customer", "portfolio_url", "tools", "estimated_hours", "hourly_rate", "weeks_to_complete", "client_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["customer", "Customer 2"], ["portfolio_url", "http://portfolio.google.com"], ["tools", "Ruby on Rails, Angular 2, and Postgres"], ["estimated_hours", "82.0"], ["hourly_rate", "120.0"], ["weeks_to_complete", 12], ["client_email", "roryjackd@yahoo.com"], ["created_at", "2018-04-16 21:29:41.060104"], ["updated_at", "2018-04-16 21:29:41.060104"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "proposals" ("customer", "portfolio_url", "tools", "estimated_hours", "hourly_rate", "weeks_to_complete", "client_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["customer", "Customer 3"], ["portfolio_url", "http://portfolio.google.com"], ["tools", "Ruby on Rails, Angular 2, and Postgres"], ["estimated_hours", "83.0"], ["hourly_rate", "120.0"], ["weeks_to_complete", 12], ["client_email", "roryjackd@yahoo.com"], ["created_at", "2018-04-16 21:29:41.062376"], ["updated_at", "2018-04-16 21:29:41.062376"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "proposals" ("customer", "portfolio_url", "tools", "estimated_hours", "hourly_rate", "weeks_to_complete", "client_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["customer", "Customer 4"], ["portfolio_url", "http://portfolio.google.com"], ["tools", "Ruby on Rails, Angular 2, and Postgres"], ["estimated_hours", "84.0"], ["hourly_rate", "120.0"], ["weeks_to_complete", 12], ["client_email", "roryjackd@yahoo.com"], ["created_at", "2018-04-16 21:29:41.064162"], ["updated_at", "2018-04-16 21:29:41.064162"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "proposals" ("customer", "portfolio_url", "tools", "estimated_hours", "hourly_rate", "weeks_to_complete", "client_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["customer", "Customer 5"], ["portfolio_url", "http://portfolio.google.com"], ["tools", "Ruby on Rails, Angular 2, and Postgres"], ["estimated_hours", "85.0"], ["hourly_rate", "120.0"], ["weeks_to_complete", 12], ["client_email", "roryjackd@yahoo.com"], ["created_at", "2018-04-16 21:29:41.065981"], ["updated_at", "2018-04-16 21:29:41.065981"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "proposals" ("customer", "portfolio_url", "tools", "estimated_hours", "hourly_rate", "weeks_to_complete", "client_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["customer", "Customer 6"], ["portfolio_url", "http://portfolio.google.com"], ["tools", "Ruby on Rails, Angular 2, and Postgres"], ["estimated_hours", "86.0"], ["hourly_rate", "120.0"], ["weeks_to_complete", 12], ["client_email", "roryjackd@yahoo.com"], ["created_at", "2018-04-16 21:29:41.067805"], ["updated_at", "2018-04-16 21:29:41.067805"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "proposals" ("customer", "portfolio_url", "tools", "estimated_hours", "hourly_rate", "weeks_to_complete", "client_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["customer", "Customer 7"], ["portfolio_url", "http://portfolio.google.com"], ["tools", "Ruby on Rails, Angular 2, and Postgres"], ["estimated_hours", "87.0"], ["hourly_rate", "120.0"], ["weeks_to_complete", 12], ["client_email", "roryjackd@yahoo.com"], ["created_at", "2018-04-16 21:29:41.069581"], ["updated_at", "2018-04-16 21:29:41.069581"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "proposals" ("customer", "portfolio_url", "tools", "estimated_hours", "hourly_rate", "weeks_to_complete", "client_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["customer", "Customer 8"], ["portfolio_url", "http://portfolio.google.com"], ["tools", "Ruby on Rails, Angular 2, and Postgres"], ["estimated_hours", "88.0"], ["hourly_rate", "120.0"], ["weeks_to_complete", 12], ["client_email", "roryjackd@yahoo.com"], ["created_at", "2018-04-16 21:29:41.071357"], ["updated_at", "2018-04-16 21:29:41.071357"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "proposals" ("customer", "portfolio_url", "tools", "estimated_hours", "hourly_rate", "weeks_to_complete", "client_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["customer", "Customer 9"], ["portfolio_url", "http://portfolio.google.com"], ["tools", "Ruby on Rails, Angular 2, and Postgres"], ["estimated_hours", "89.0"], ["hourly_rate", "120.0"], ["weeks_to_complete", 12], ["client_email", "roryjackd@yahoo.com"], ["created_at", "2018-04-16 21:29:41.073097"], ["updated_at", "2018-04-16 21:29:41.073097"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProposal Load (0.6ms)[0m  [1m[34mSELECT  "proposals".* FROM "proposals" ORDER BY "proposals"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/proposals" for ::1 at 2018-04-16 15:32:25 -0600
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProposalsController#index as HTML
+  [1m[36mProposal Load (0.8ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals"[0m
+Completed 200 OK in 26ms (Views: 15.9ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2018-04-16 15:32:27 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
